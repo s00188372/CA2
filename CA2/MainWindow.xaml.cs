@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace CA2
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        ObservableCollection<string> names = new ObservableCollection<string>();
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +43,11 @@ namespace CA2
         private void tbxLastName_GotFocus(object sender, RoutedEventArgs e)
         {
             tbxLastName.Clear();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
