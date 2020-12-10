@@ -22,7 +22,7 @@ namespace CA2
     public partial class MainWindow : Window
     {
 
-        ObservableCollection<string> names = new ObservableCollection<string>();
+        ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +30,13 @@ namespace CA2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Employee emp1 = new Employee("Jane", "Jones");
+            Employee emp2 = new Employee("Joe", "Murphy");
+
+            employees.Add(emp1);
+            employees.Add(emp2);
+
+            lbxEmployees.ItemsSource = employees;
 
         }
 
@@ -45,8 +52,20 @@ namespace CA2
             tbxLastName.Clear();
         }
 
+        //Add Button
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+
+            //Reading From inputs
+            string firstName = tbxFirstName.Text;
+            string LastName = tbxLastName.Text;
+
+            //Create Object
+            Employee employee = new Employee(firstName, LastName);
+
+
+            //Add to observable collection
+            employees.Add(employee);
 
         }
     }
