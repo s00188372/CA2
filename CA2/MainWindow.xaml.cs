@@ -105,6 +105,12 @@ namespace CA2
                 {
                     tbxSalary.Text = "";
                     rbtPT.IsChecked = true;
+                    tbxHoursWorked.Text = selectedEmployee.Hours.ToString();
+                    tbxHourlyRate.Text = selectedEmployee.HourlyRate.ToString();
+
+                    decimal pay = (selectedEmployee.HourlyRate * Convert.ToDecimal(selectedEmployee.Hours));
+                    tblkPay.Text = pay.ToString();
+
                 }
 
             }
@@ -178,11 +184,5 @@ namespace CA2
             tbxSalary.Clear();
         }
 
-        private void tblkPay_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-
-
-        }
     }
 }

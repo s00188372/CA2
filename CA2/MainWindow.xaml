@@ -25,7 +25,7 @@
         <TextBox x:Name="tbxHoursWorked" HorizontalAlignment="Left" Height="23" Margin="452,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="tbxHourlyRate" HorizontalAlignment="Left" Height="23" Margin="452,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="404,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Height="25"><Run Text="Monthly Pay"/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="tblkPay" HorizontalAlignment="Left" Margin="485,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" GotFocus="tblkPay_GotFocus"/>
+        <TextBlock x:Name="tblkPay" HorizontalAlignment="Left" Margin="485,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="690,155,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="690,207,0,0" VerticalAlignment="Top" Width="75"/>
 
