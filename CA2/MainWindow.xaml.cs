@@ -5,6 +5,14 @@ using System.Windows.Controls;
 
 namespace CA2
 {
+
+    /****************************************************************************
+     
+                                 ILLIA SHAKIN CA2
+                                    S00188372
+      
+     ******************************************************************************/
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -14,15 +22,16 @@ namespace CA2
         public string EmployeeTime = "";
         public static decimal FtSalary;
 
-        ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
-        ObservableCollection<Employee> FilteredEmployees = new ObservableCollection<Employee>();
+        ObservableCollection<Employee> employees = new ObservableCollection<Employee>(); // Creating employees
+        ObservableCollection<Employee> FilteredEmployees = new ObservableCollection<Employee>(); //Creating filtered employees
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e) // Method to load when program started
         {
+            //Creating employees
             Employee emp1 = new Employee("Jane", "Jones", "Full Time",100000, 5,12.5);
             Employee emp2 = new Employee("Bob", "Reilly", "Full Time", 150000,5,12.5);
             Employee emp3 = new Employee("Joe", "Murphy", "Part Time", 9000,5,12.5);
@@ -62,6 +71,7 @@ namespace CA2
             FtSalary = Convert.ToInt32(tbxSalary.Text);
 
 
+            //Indetifying if employee is ft or ft
             string FullTime = "Full Time";
             if (rbtFT.IsChecked == true)
             {
@@ -83,7 +93,7 @@ namespace CA2
 
         }
 
-        private void lbxEmployees_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lbxEmployees_SelectionChanged(object sender, SelectionChangedEventArgs e) // Filtering checkboxes
         {
             //Checking what has been selected
             Employee selectedEmployee = lbxEmployees.SelectedItem as Employee;
@@ -94,6 +104,7 @@ namespace CA2
                 tbxFirstName.Text = selectedEmployee.FirstName;
                 tbxLastName.Text = selectedEmployee.LastName;
 
+                //If fulltime is checked
                 if(selectedEmployee.EmployeeTime == "Full Time")
                 {
                     rbtFT.IsChecked = true;
@@ -101,7 +112,7 @@ namespace CA2
                     tblkPay.Text = pay.ToString();
                     tbxSalary.Text = selectedEmployee.FullTimeSalary.ToString();
                 }
-                else
+                else //Other
                 {
                     tbxSalary.Text = "";
                     rbtPT.IsChecked = true;
@@ -122,7 +133,7 @@ namespace CA2
 
         }
 
-        private void cbxFullTime_Checked(object sender, RoutedEventArgs e)
+        private void cbxFullTime_Checked(object sender, RoutedEventArgs e) //Selected Checkboxes
         {
 
             if ((cbxPartTime.IsChecked == true) && (cbxFullTime.IsChecked == true)) //Checking if both are checked
@@ -173,7 +184,7 @@ namespace CA2
 
         }
 
-        private void btnClear_Click(object sender, RoutedEventArgs e)
+        private void btnClear_Click(object sender, RoutedEventArgs e) //Clearing all fields
         {
             tbxFirstName.Clear();
             tbxLastName.Clear();
@@ -184,5 +195,12 @@ namespace CA2
             tbxSalary.Clear();
         }
 
+        private void btnDelete_Click(object sender, RoutedEventArgs e) // Deleting on Click
+        {
+            Employee selectedEmployee = lbxEmployees.SelectedItem as Employee;
+
+            selectedEmployee = null;
+
+        }
     }
 }
